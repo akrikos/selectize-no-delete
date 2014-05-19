@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../components/selectize.js/css/selectize.css">
+    <link rel="stylesheet" href="../components/selectize.js/css/selectize.bootstrap3.css">
+    <link rel="stylesheet" href="../src/selectize-disable.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-xs-6">
+        You won't be able to hit backspace or delete to remove the selected item.
+        <select id="demo">
+        </select>
+      </div>
+    </div>
+
+    <script src="../components/jquery/js/jquery.js"></script>
+    <script src="../components/selectize.js/standalone/selectize.js"></script>
+    <script src="../src/selectize-no-delete.js"></script>
+    <script>
+      var instance;
+      (function($) {
+        $(function() {
+          var options = {
+            plugins: {
+              'no-delete': {}
+            },
+            valueField: 'email',
+            labelField: 'name',
+            searchField: ['name', 'email'],
+            options: [
+              {name:"Bob Dorkman", email:"dork@example.com", matchesRule: false},
+              {name:"Trogdor Justice", email:"justice@example.com", matchesRule: false},
+              {name:"Hammish Disabled", email:"hammish@example.com", matchesRule: true}
+            ]
+          };
+          instance = $("#demo").selectize(options)[0].selectize;
+          instance.setValue('dork@example.com');
+          instance.focus();
+        });
+      })(jQuery);
+    </script>
+  </body>
+</html>

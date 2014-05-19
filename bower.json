@@ -1,0 +1,32 @@
+{
+  "name": "selectize-disabled",
+  "version": "0.0.1",
+  "homepage": "https://github.com/akrikos/selectize-disable",
+  "authors": [
+    "Mark Merrill"
+  ],
+  "description": "Disable options plugin for selectize",
+  "license": "none",
+  "private": false,
+  "appPath": "src",
+  "ignore": [
+  ],
+  "devDependencies": {
+    "selectize.js": "git@github.com:brianreavis/selectize.js.git#0.8.5",
+    "bootstrap": "git@github.com:twbs/bootstrap.git#3.1.1"
+  },
+  "exportsOverride": {
+    "selectize.js": {
+      "standalone": "dist/js/standalone/*.js",
+      "css": "dist/css/*.css"
+    },
+    "jquery": {
+      "js": "dist/*.js"
+    },
+    "bootstrap": {
+      "css": "dist/css/*.css",
+      "fonts": "dist/fonts/*",
+      "js": "dist/js/*.js"
+    }
+  }
+}
